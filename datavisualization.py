@@ -19,11 +19,11 @@ def data_vis():
     
     column = list(data.columns)
     print("columns-----------", column)
-    column_to_remove = ["fund_symbol", "price_date", 'subsequent_investment', 'fund_category', 'fund_family', 'management_name', 'management_start_date', 'year_to_date_return', 'morningstar_risk_rating', 'inception_date', 'investment_type', 'size_type', 'fund_annual_report_net_expense_ratio', 'category_annual_report_net_expense_ratio', 'fund_prospectus_net_expense_ratio', 'category_max_front_end_sales_load', 'category_max_deferred_sales_load', 'last_cap_gain']
+    column_to_remove = ["price_date", 'subsequent_investment', 'fund_category', 'fund_family', 'management_name', 'management_start_date', 'year_to_date_return', 'morningstar_risk_rating', 'inception_date', 'investment_type', 'size_type', 'fund_annual_report_net_expense_ratio', 'category_annual_report_net_expense_ratio', 'fund_prospectus_net_expense_ratio', 'category_max_front_end_sales_load', 'category_max_deferred_sales_load', 'last_cap_gain']
     
     for col_to_remove in column_to_remove:
         column.remove(col_to_remove)
-    print(column)
+    print("shortlisted columns----------------------",column)
      
     columns_to_remove_outliers = ['nav_per_share', 'initial_investment', 'total_net_assets', 'investment_strategy', 'morningstar_overall_rating', 'last_dividend', 'annual_holdings_turnover']
 
