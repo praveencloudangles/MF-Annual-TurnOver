@@ -36,15 +36,15 @@ def data_preproc():
     convert_dict = {'quote_type': int, 'size_type': int, 'investment_type': int, 'exchange_timezone': int, 'exchange_name': int, 'exchange_code': int, 'currency': int, 'region': int}
     df = df.astype(convert_dict)
     
-    df[['fund_symbol', 'price_date', 'fund_short_name', 'fund_long_name', 'fund_category', 'fund_family', 'management_name', 'management_bio', 'management_start_date', 'investment_strategy', 'inception_date']] = df[['fund_symbol', 'price_date', 'fund_short_name', 'fund_long_name', 'fund_category', 'fund_family', 'management_name', 'management_bio', 'management_start_date', 'investment_strategy', 'inception_date']].apply(LabelEncoder().fit_transform)
+    df[['price_date', 'fund_short_name', 'fund_long_name', 'fund_category', 'fund_family', 'management_name', 'management_bio', 'management_start_date', 'investment_strategy', 'inception_date']] = df[['price_date', 'fund_short_name', 'fund_long_name', 'fund_category', 'fund_family', 'management_name', 'management_bio', 'management_start_date', 'investment_strategy', 'inception_date']].apply(LabelEncoder().fit_transform)
     
-    final_conv_dict = {'fund_symbol': int, 'price_date': int, 'fund_short_name': int, 'fund_long_name': int, 'fund_category': int, 'fund_family': int, 'management_name': int, 'management_bio': int, 'management_start_date': int, 'investment_strategy': int, 'inception_date': int}
+    final_conv_dict = {'price_date': int, 'fund_short_name': int, 'fund_long_name': int, 'fund_category': int, 'fund_family': int, 'management_name': int, 'management_bio': int, 'management_start_date': int, 'investment_strategy': int, 'inception_date': int}
     
     df = df.astype(final_conv_dict)
     
-    print("checkinf types -----------", df.dtypes)
+    print("checkinf types-------------", df.dtypes)
     
-    df.drop(['fund_short_name', 'fund_long_name', 'region', 'management_bio', 'fund_max_deferred_sales_load', 'fund_max_12b1_fee', 'fund_max_front_end_sales_load', 'quote_type', 'currency', 'exchange_timezone', 'exchange_name', 'exchange_code', 'fund_prospectus_gross_expense_ratio'], inplace=True, axis=1)
+    df.drop(['fund_symbol','fund_short_name', 'fund_long_name', 'region', 'management_bio', 'fund_max_deferred_sales_load', 'fund_max_12b1_fee', 'fund_max_front_end_sales_load', 'quote_type', 'currency', 'exchange_timezone', 'exchange_name', 'exchange_code', 'fund_prospectus_gross_expense_ratio'], inplace=True, axis=1)
     
     print(df)
     
